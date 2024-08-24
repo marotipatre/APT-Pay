@@ -8,15 +8,22 @@ import { Network, Provider } from "aptos";
 
 import "./index.css";
 export const provider = new Provider(Network.TESTNET);
+
 // change this to be your module account address
 export const moduleAddress = "0x71461a8e2ddbfd6a74152c8a86df4a3b60d73b2fd9be872f9a8585501edcdd23";
+
+
+
+
+ 
+
 
 function App() {
   const { account, signAndSubmitTransaction } = useWallet();
   const [counter, setCounter] = useState<number>(0);
   const [transactionInProgress, setTransactionInProgress] = useState<boolean>(false);
-  const [accountHasList, setAccountHasList] = useState<boolean>(false);
   const [reload, setReload] = useState<number>(0);
+
 
   const fetch = async () => {
     if (!account) return;

@@ -4,16 +4,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Network } from "aptos";
 
 const wallets = [new PetraWallet()];
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 root.render(
   <React.StrictMode>
-    <AptosWalletAdapterProvider plugins={wallets} autoConnect={true}>
+    <AptosWalletAdapterProvider
+      plugins={wallets}
+      autoConnect={false}
+      dappConfig={{ network: Network.TESTNET, aptosConnectDappId: "dapp-id" }}
+    >
       <App />
     </AptosWalletAdapterProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
