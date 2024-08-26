@@ -16,7 +16,10 @@ root.render(
     <AptosWalletAdapterProvider
       plugins={wallets}
       autoConnect={false}
-      dappConfig={{ network: Network.TESTNET, aptosConnectDappId: "dapp-id" }}
+      dappConfig={{
+        network: Network.TESTNET,
+        aptosConnectDappId: "30320062-c7fe-40bd-ab13-e98ae5327bc0",
+      }}
     >
       <App />
     </AptosWalletAdapterProvider>
